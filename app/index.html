@@ -44,7 +44,7 @@
     <div class="col s12 m8">
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="http://placehold.it/450x250">
+          <div class="activator" id="map" style="min-height: 300px;"></div>
         </div>
         <div class="card-content">
           <span class="card-title activator grey-text text-darken-4">Peet’s Coffee & Tea<i class="material-icons right">more_vert</i></span>
@@ -95,15 +95,18 @@
 
 </div>
 
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<!-- Google Map: change UA-XXXXX-X to be your site's ID. -->
+
 <script>
-  (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-  e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-  e.src='https://www.google-analytics.com/analytics.js';
-  r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-  ga('create','UA-XXXXX-X');ga('send','pageview');
-</script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+    </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 
 <!-- build:js scripts/vendor.js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
