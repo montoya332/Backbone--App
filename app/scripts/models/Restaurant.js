@@ -5,11 +5,12 @@ webApp.Models = webApp.Models || {};
 (function () {
   'use strict';
 
-  webApp.Models.Blog = Backbone.Model.extend({
+  webApp.Models.Restaurant = Backbone.Model.extend({
 
     url: '',
 
     initialize: function() {
+      console.log('RestaurantModel');
     },
 
     defaults: {

@@ -5,9 +5,13 @@ webApp.Collections = webApp.Collections || {};
 (function () {
   'use strict';
 
-  webApp.Collections.AnimalCollection = Backbone.Collection.extend({
+  webApp.Collections.RestaurantCollection = Backbone.Collection.extend({
 
-    model: webApp.Models.AnimalCollection
+    model: webApp.Models.RestaurantCollection,
+
+    initialize: function() {
+      console.log('RestaurantCollection');
+    },
 
   });
 

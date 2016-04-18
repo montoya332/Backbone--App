@@ -5,7 +5,7 @@ webApp.Routers = webApp.Routers || {};
 (function () {
   'use strict';
 
-  webApp.Routers.Blog = Backbone.Router.extend({
+  webApp.Routers.MainRouter = Backbone.Router.extend({
 
   });
 
