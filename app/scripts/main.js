@@ -1,7 +1,7 @@
-/*global testing, $*/
+/*global webApp, $*/
 
 
-window.testing = {
+window.webApp = {
   Models: {},
   Collections: {},
   Views: {},
@@ -14,5 +14,5 @@ window.testing = {
 
 $(document).ready(function () {
   'use strict';
-  testing.init();
+  webApp.init();
 });
