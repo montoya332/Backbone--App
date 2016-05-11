@@ -1,18 +1,25 @@
 /*global webApp, Backbone*/
 
-webApp.Collections = webApp.Collections || {};
+define([
+    'jquery',
+    'backbone',
+    'models/Restaurant'
+], function(
+    $,
+    Backbone,
+    RestaurantModel
+) {
 
-(function () {
-  'use strict';
+    'use strict';
 
-  webApp.Collections.RestaurantCollection = Backbone.Collection.extend({
+    var RestaurantCollection = Backbone.Collection.extend({
+        model: RestaurantModel, //TODO
 
-    model: webApp.Models.RestaurantCollection,
+        initialize: function() {
+            console.log('RestaurantCollection');
+        }
+    });
 
-    initialize: function() {
-      console.log('RestaurantCollection');
-    },
+    return RestaurantCollection;
 
-  });
-
-})();
+});

@@ -1,12 +1,18 @@
 /*global webApp, Backbone*/
 
-webApp.Routers = webApp.Routers || {};
+define([
+    'jquery',
+    'backbone'
 
-(function () {
-  'use strict';
+], function(
+    $,
+    Backbone
+) {
 
-  webApp.Routers.MainRouter = Backbone.Router.extend({
+    'use strict';
 
-  });
+    var Router = Backbone.Router.extend({});
 
-})();
+    return Router;
+
+});

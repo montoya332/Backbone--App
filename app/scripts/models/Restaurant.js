@@ -1,27 +1,31 @@
 /*global webApp, Backbone*/
+define([
+    'jquery',
+    'backbone'
 
-webApp.Models = webApp.Models || {};
+], function(
+    $,
+    Backbone
+) {
 
-(function () {
-  'use strict';
+    'use strict';
 
-  webApp.Models.Restaurant = Backbone.Model.extend({
+    var Restaurant = Backbone.Model.extend({
+        url: '',
 
-    url: '',
+        initialize: function() {
+            console.log('RestaurantModel');
+        },
 
-    initialize: function() {
-      console.log('RestaurantModel');
-    },
+        defaults: {},
 
-    defaults: {
-    },
+        validate: function(attrs, options) {},
 
-    validate: function(attrs, options) {
-    },
+        parse: function(response, options) {
+            return response;
+        }
+    });
 
-    parse: function(response, options)  {
-      return response;
-    }
-  });
+    return Restaurant;
 
-})();
+});
