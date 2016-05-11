@@ -35,7 +35,7 @@ require(['jquery', 'underscore', 'backbone', 'app'],
     function($, _, Backbone, WebApp) {
 
         'use strict';
-        console.log('webApp', webApp);
+
         /*  Initialize the application view  */
         WebApp.start();
         

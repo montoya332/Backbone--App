@@ -5,18 +5,15 @@ define([
     'backbone',
     'marionette',
     /**/
-    'views/RestaurantView',
-    'models/Restaurant',
-    'collections/RestaurantCollection',
+    'backboneApplication/RestaurantView',
 
 ], function(
     $,
     Backbone,
     Marionette,
-    /**/
-    RestaurantView,
-    RestaurantModel,
-    RestaurantCollection
+    /* Backbone Application */
+    RestaurantView
+    /* Marionette Application */
 ) {
 
     'use strict';
@@ -31,11 +28,7 @@ define([
         },
         showHomePage: function() {
             console.log("showHomePage");
-            webApp.Views.appView = new RestaurantView({
-                model: new RestaurantModel(),
-                collection: new RestaurantCollection()
-            });
-
+            webApp.Views.appView = new RestaurantView({});
         }
 
     });
