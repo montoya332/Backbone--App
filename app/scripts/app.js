@@ -1,4 +1,4 @@
-define(['marionette', 'routes/AppRouter','marionetteApplication/main_layout_view'], function(Marionette, AppRouter, MainLayoutView) {
+define(['marionette', 'routes/AppRouter','marionetteApplication/main_layout_view','header/view'], function(Marionette, AppRouter, MainLayoutView, NavBarView) {
     var WebApp = new Marionette.Application();
 
     WebApp.navigate = function(route, options) {
@@ -29,6 +29,8 @@ define(['marionette', 'routes/AppRouter','marionetteApplication/main_layout_view
     WebApp.on('before:start', function() {
         webApp.application.MainLayoutView = new MainLayoutView();
         webApp.application.MainLayoutView.render();
+        webApp.application.NavBarView = new NavBarView();
+        webApp.application.NavBarView.render();
     });
 
     WebApp.on('start', function() {

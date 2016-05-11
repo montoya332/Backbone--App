@@ -24,7 +24,7 @@ define([
 
         tagName: 'div',
 
-        el: '#main-container',
+        el: '.application__content',
 
         className: '',
 
