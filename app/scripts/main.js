@@ -30,24 +30,15 @@ require.config({
     waitSeconds: 200
 });
 
-require(['jquery', 'underscore', 'backbone', 'views/RestaurantView', 'models/Restaurant', 'collections/RestaurantCollection', 'routes/Restaurant_Routes'],
-    function($, _, Backbone, RestaurantView, RestaurantModel, RestaurantCollection, MainRouter) {
+
+require(['jquery', 'underscore', 'backbone', 'app'],
+    function($, _, Backbone, WebApp) {
 
         'use strict';
         console.log('webApp', webApp);
         /*  Initialize the application view  */
-        webApp.Views.appView = new RestaurantView({
-            model: new RestaurantModel(),
-            collection: new RestaurantCollection()
-        });
-
-        /*  Initialize routing, need to have global access to the Router  */
-        webApp.Routers = new MainRouter();
-
-        /*  Start Backbone.history()  */
-        Backbone.history.start({
-            pushState: true
-        });
+        WebApp.start();
+        
     });
 
 (function() {
