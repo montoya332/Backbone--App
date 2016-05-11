@@ -6,10 +6,11 @@ require.config({
         underscore: '../bower_components/underscore/underscore',
         backbone: '../bower_components/backbone/backbone',
         materialize: '../bower_components/Materialize/dist/js/materialize',
-        handlebars: '../bower_components/handlebars/handlebars'
+        handlebars: '../bower_components/handlebars/handlebars',
+        text: '../bower_components/text/text'
     },
     shim: {},
-    waitSeconds: 15
+    waitSeconds: 200
 });
 
 require(['jquery', 'underscore', 'backbone', 'views/RestaurantView', 'models/Restaurant', 'collections/RestaurantCollection','routes/Restaurant_Routes'],

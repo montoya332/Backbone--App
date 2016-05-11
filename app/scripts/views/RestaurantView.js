@@ -4,18 +4,19 @@
 define([
     'jquery',
     'backbone',
-    'handlebars'
-
+    'handlebars',
+    'templates/compiled-templates'
 ], function(
     $,
     Backbone,
-    Handlebars
+    handlebars,
+    JST
 ) {
 
     'use strict';
 
     var RestaurantView = Backbone.View.extend({
-        // template: JST['app/scripts/templates/RestaurantView.ejs'],
+        template: JST.SampleTemplate,
 
         tagName: 'div',
 
@@ -31,7 +32,7 @@ define([
         },
 
         render: function() {
-            // this.$el.html(this.template(this.model.toJSON()));
+            this.$el.html(this.template(this.model.toJSON()));
             console.log('RestaurantView');
         }
 

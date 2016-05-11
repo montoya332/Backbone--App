@@ -9,7 +9,8 @@
     "css-calc-mixin": "*",
     "Materialize": "materialize#^0.97.5",
     "requirejs": "^2.2.0",
-    "handlebars": "^4.0.5"
+    "handlebars": "^4.0.5",
+    "text": "requirejs-text#^2.0.15"
   },
   "devDependencies": {
     "chai": "^3.5.0",
