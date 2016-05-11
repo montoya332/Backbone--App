@@ -31,8 +31,8 @@ require.config({
 });
 
 
-require(['jquery', 'underscore', 'backbone', 'app'],
-    function($, _, Backbone, WebApp) {
+require(['app'],
+    function(WebApp) {
 
         'use strict';
 
@@ -49,6 +49,7 @@ require(['jquery', 'underscore', 'backbone', 'app'],
         Views: {},
         Routers: {},
         Globals: {},
+        application:{},
         init: function() {}
     };
 
