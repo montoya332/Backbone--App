@@ -10,7 +10,8 @@
     "Materialize": "materialize#^0.97.5",
     "requirejs": "^2.2.0",
     "handlebars": "^4.0.5",
-    "text": "requirejs-text#^2.0.15"
+    "text": "requirejs-text#^2.0.15",
+    "backbone.marionette": "marionette#^2.4.5"
   },
   "devDependencies": {
     "chai": "^3.5.0",
