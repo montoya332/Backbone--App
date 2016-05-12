@@ -31,22 +31,21 @@ define(['marionette', 'routes/AppRouter','marionetteApplication/main_layout_view
         webApp.application.MainLayoutView.render();
         webApp.application.NavBarView = new NavBarView();
         webApp.application.NavBarView.render();
+        
     });
 
     WebApp.on('start', function() {
         if (Backbone.history) {
-            
             /*  Initialize routing, need to have global access to the Router  */
-            webApp.Routers.AppRouter = new AppRouter();
-
+            webApp.Routers.AppRouter = new AppRouter({});
             /*  Start Backbone.history()  */
             Backbone.history.start({
                 pushState: true
             });
             if (WebApp.getCurrentRoute() === '') {}
-
         }
     });
 
+   webApp.app= WebApp
     return WebApp;
 });

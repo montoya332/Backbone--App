@@ -16,14 +16,12 @@ define([
     'use strict';
 
     var mainLayoutView = Marionette.LayoutView.extend({
-        el: '.application__header',
-        template: JST.NavTemplate,
+        el: '.application__content',
+        template: JST.OrdersTemplate,
 
         regions: {
-            navDesktop: '#nav-desktop',
-            navMobile: '#nav-mobile'
-        },
-        initialize: function() {console.log('mainLayoutView')}
+            orders: '.collection'
+        }
     });
 
     return mainLayoutView;

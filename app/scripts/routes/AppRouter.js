@@ -6,31 +6,31 @@ define([
     'marionette',
     /**/
     'backboneApplication/RestaurantView',
+    /* Marionette Application */
+    'routes/AppRouterController',
+    'orders/layout-view'
 
 ], function(
     $,
     Backbone,
     Marionette,
     /* Backbone Application */
-    RestaurantView
+    RestaurantView,
     /* Marionette Application */
+    AppRouterController,
+    OrdersView
 ) {
 
     'use strict';
 
-    var Router = Marionette.AppRouter.extend({
-
-        appRoutes: {},
-
-        /* standard routes can be mixed with appRoutes/Controllers above */
-        routes: {
-            "": "showHomePage"
+    var Router = Backbone.Marionette.AppRouter.extend({
+        controller: AppRouterController,
+        appRoutes: {
+            //'': 'showHomePage',
+            '': 'showOrdersPage'
         },
-        showHomePage: function() {
-            console.log("showHomePage");
-            webApp.Views.appView = new RestaurantView({});
-        }
 
+        onRoute: function(name, path,arg) {console.log('onRoute',name)}
     });
 
     return Router;
