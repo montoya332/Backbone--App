@@ -1,19 +1,18 @@
 define([
 
-  'handlebars',
+    'handlebars',
+    'text!header/nav-template.hbs',
+    'text!templates/main_layout_view.hbs',
+    'text!orders/layout-template.hbs',
+    'text!templates/view.hbs'
 
-  'text!templates/view.hbs'
+], function(Handlebars, NavTemplate, MainLayoutTemplate, OrdersTemplate,SampleTemplateFile) {
 
-], function(Handlebars, SampleTemplateFile){
-
-    
-
-  return {
-
-    SampleTemplate: Handlebars.compile(SampleTemplateFile)
-
-  }
-
-  
+    return {
+        NavTemplate: Handlebars.compile(NavTemplate),
+        mainLayoutTemplate: Handlebars.compile(MainLayoutTemplate),
+        OrdersTemplate: Handlebars.compile(OrdersTemplate),
+        SampleTemplate: Handlebars.compile(SampleTemplateFile)
+    }
 
 });

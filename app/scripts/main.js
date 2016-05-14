@@ -23,7 +23,7 @@ require.config({
             exports: 'Backbone'
         },
         marionette: {
-            deps: ['backbone'],
+            deps: ['jquery', 'underscore', 'backbone'],
             exports: 'Marionette'
         }
     },
@@ -31,11 +31,17 @@ require.config({
 });
 
 
-require(['jquery', 'underscore', 'backbone', 'app'],
-    function($, _, Backbone, WebApp) {
+require(['app'],
+    function(WebApp) {
 
         'use strict';
-        console.log('webApp', webApp);
+        webApp = WebApp;
+        webApp.Models= {};
+        webApp.Collections= {};
+        webApp.Views= {};
+        webApp.Routers= {};
+        webApp.Globals= {};
+
         /*  Initialize the application view  */
         WebApp.start();
         
@@ -43,13 +49,6 @@ require(['jquery', 'underscore', 'backbone', 'app'],
 
 (function() {
 
-    window.webApp = {
-        Models: {},
-        Collections: {},
-        Views: {},
-        Routers: {},
-        Globals: {},
-        init: function() {}
-    };
+    window.webApp = {};
 
 })();
