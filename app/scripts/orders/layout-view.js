@@ -16,7 +16,7 @@ define([
     'use strict';
 
     var mainLayoutView = Marionette.LayoutView.extend({
-        el: '.application__content',
+        //el: '.application__content',
         template: JST.OrdersTemplate,
 
         regions: {

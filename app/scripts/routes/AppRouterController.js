@@ -23,12 +23,11 @@ define([
     var RouterController = {
         showHomePage: function() {
             console.log("showHomePage");
-            webApp.Views.appView = new RestaurantView({});
+            webApp.mainContainer.content.show(new RestaurantView({}));
         },
         showOrdersPage: function() {
             console.log("showOrdersPage");
-            webApp.Views.appView = new OrdersView({});
-            webApp.Views.appView.render()
+            webApp.mainContainer.content.show(new OrdersView({}));
         }
     };
     return RouterController;

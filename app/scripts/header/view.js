@@ -15,17 +15,15 @@ define([
 
     'use strict';
 
-    var mainLayoutView = Marionette.LayoutView.extend({
-        el: '.application__header',
+    var headerView = Marionette.LayoutView.extend({
         template: JST.NavTemplate,
-
         regions: {
             navDesktop: '#nav-desktop',
             navMobile: '#nav-mobile'
         },
-        initialize: function() {console.log('mainLayoutView')}
+        initialize: function() {console.log('headerView')}
     });
 
-    return mainLayoutView;
+    return headerView;
 
 });

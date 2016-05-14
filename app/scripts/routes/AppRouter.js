@@ -26,8 +26,8 @@ define([
     var Router = Backbone.Marionette.AppRouter.extend({
         controller: AppRouterController,
         appRoutes: {
-            //'': 'showHomePage',
-            '': 'showOrdersPage'
+            '': 'showHomePage',
+            //'': 'showOrdersPage'
         },
 
         onRoute: function(name, path,arg) {console.log('onRoute',name)}
