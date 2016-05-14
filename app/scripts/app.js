@@ -1,4 +1,4 @@
-define(['marionette', 'routes/AppRouter'], function(Marionette, AppRouter) {
+define(['marionette', 'routes/AppRouter','marionetteApplication/main_layout_view','header/view'], function(Marionette, AppRouter, MainLayoutView, NavBarView) {
     var WebApp = new Marionette.Application();
 
     WebApp.navigate = function(route, options) {
@@ -27,50 +27,20 @@ define(['marionette', 'routes/AppRouter'], function(Marionette, AppRouter) {
     };
 
     WebApp.on('before:start', function() {
-        var RegionContainer = Marionette.LayoutView.extend({
-            el: '#app-container',
-
-            regions: {
-                header: '#header-region',
-                main: '#main-region',
-                dialog: '#dialog-region'
-            }
-        });
-
-        WebApp.regions = new RegionContainer();
-        WebApp.regions.dialog.onShow = function(view) {
-            var self = this;
-            var closeDialog = function() {
-                self.stopListening();
-                self.empty();
-                self.$el.dialog('destroy');
-            };
-
-            this.listenTo(view, 'dialog:close', closeDialog);
-
-            this.$el.dialog({
-                modal: true,
-                title: view.title,
-                width: 'auto',
-                close: function(e, ui) {
-                    closeDialog();
-                }
-            });
-        };
+        webApp.mainContainer = new MainLayoutView();
+        webApp.mainContainer.render();
+        webApp.mainContainer.header.show(new NavBarView());
     });
 
     WebApp.on('start', function() {
         if (Backbone.history) {
-
             /*  Initialize routing, need to have global access to the Router  */
-            webApp.Routers = new AppRouter();
+            webApp.appRouter = new AppRouter({});
 
             /*  Start Backbone.history()  */
             Backbone.history.start({
                 pushState: true
             });
-            if (WebApp.getCurrentRoute() === '') {}
-
         }
     });
 

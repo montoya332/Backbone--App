@@ -13,9 +13,7 @@ define([
     var Restaurant = Backbone.Model.extend({
         url: '',
 
-        initialize: function() {
-            console.log('RestaurantModel');
-        },
+        initialize: function() {},
 
         defaults: {},
 

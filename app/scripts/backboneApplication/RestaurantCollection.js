@@ -3,7 +3,7 @@
 define([
     'jquery',
     'backbone',
-    'models/Restaurant'
+    'backboneApplication/Restaurant'
 ], function(
     $,
     Backbone,
@@ -13,11 +13,9 @@ define([
     'use strict';
 
     var RestaurantCollection = Backbone.Collection.extend({
-        model: RestaurantModel, //TODO
+        model: RestaurantModel,
 
-        initialize: function() {
-            console.log('RestaurantCollection');
-        }
+        initialize: function() {}
     });
 
     return RestaurantCollection;
