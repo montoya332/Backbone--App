@@ -4,15 +4,22 @@ define([
     'text!header/nav-template.hbs',
     'text!templates/main_layout_view.hbs',
     'text!orders/layout-template.hbs',
-    'text!templates/view.hbs'
+    'text!templates/view.hbs',
 
-], function(Handlebars, NavTemplate, MainLayoutTemplate, OrdersTemplate,SampleTemplateFile) {
+    /* Orders */
+    'text!orders/templates/compositeViewTemplate.hbs',
+    'text!orders/templates/itemViewTemplate.hbs'
+
+], function(Handlebars, NavTemplate, MainLayoutTemplate, OrdersTemplate,SampleTemplateFile, OrdersCompositeViewTemplate, OrdersItemViewTemplate) {
 
     return {
         NavTemplate: Handlebars.compile(NavTemplate),
         mainLayoutTemplate: Handlebars.compile(MainLayoutTemplate),
         OrdersTemplate: Handlebars.compile(OrdersTemplate),
-        SampleTemplate: Handlebars.compile(SampleTemplateFile)
+        SampleTemplate: Handlebars.compile(SampleTemplateFile),
+        /* Orders */
+        OrdersCompositeViewTemplate: Handlebars.compile(OrdersCompositeViewTemplate),
+        OrdersItemViewTemplate: Handlebars.compile(OrdersItemViewTemplate)
     }
 
 });

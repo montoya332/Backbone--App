@@ -1,29 +1,44 @@
 define([
-    'jquery',
-    'backbone',
-    'marionette',
-    'handlebars',
-    'templates/compiled-templates',
-
+	'jquery',
+	'backbone',
+	'marionette',
+	'handlebars',
+	'templates/compiled-templates',
+	'orders/views/compositeView'
 ], function(
-    $,
-    Backbone,
-    Marionette,
-    handlebars,
-    JST
+	$,
+	Backbone,
+	Marionette,
+	handlebars,
+	JST,
+	OrdersCompositeView
 ) {
 
-    'use strict';
+	'use strict';
 
-    var mainLayoutView = Marionette.LayoutView.extend({
-        //el: '.application__content',
-        template: JST.OrdersTemplate,
+	var mainLayoutView = Marionette.LayoutView.extend({
+		//el: '.application__content',
+		template: JST.OrdersTemplate,
 
-        regions: {
-            orders: '.collection'
-        }
-    });
+		regions: {
+			header: '.header',
+			mainContent: '.mainContent',
+			footer: '.footer'
+		},
+		initialize: function(options) {
+			this.render();
 
-    return mainLayoutView;
+
+		},
+		onRender: function() {
+			this.showOrdersList();
+		},
+		showOrdersList: function() {
+			window.test = this;
+			this.mainContent.show(new OrdersCompositeView({}))
+		},
+	});
+
+	return mainLayoutView;
 
 });
