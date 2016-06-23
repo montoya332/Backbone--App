@@ -18,7 +18,6 @@ define([
     var ItemView = Marionette.ItemView.extend({
         template: JST.OrdersItemViewTemplate,
         tagName: 'li',
-        template: SPtemplates.OrgChartHeaderTile,
         className: ' collection-item avatar',
     });
 

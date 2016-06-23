@@ -7,8 +7,8 @@ define([
     'text!templates/view.hbs',
 
     /* Orders */
-    'text!orders/templates/compositeView.hbs',
-    'text!orders/templates/itemView.hbs',
+    'text!orders/templates/compositeViewTemplate.hbs',
+    'text!orders/templates/itemViewTemplate.hbs'
 
 ], function(Handlebars, NavTemplate, MainLayoutTemplate, OrdersTemplate,SampleTemplateFile, OrdersCompositeViewTemplate, OrdersItemViewTemplate) {
 

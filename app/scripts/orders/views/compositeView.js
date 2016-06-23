@@ -25,8 +25,8 @@ define([
         childViewContainer: 'ul',
         initialize: function(options) {
             options = options || {};
-            this.collection =  new OrdersCollection({});
             this.render();
+            this.collection =  new OrdersCollection([{},{},{}]);  
         },
     });
 

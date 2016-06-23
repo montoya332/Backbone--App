@@ -5,7 +5,11 @@ define([
 
 	'use strict';
 	var Model = Backbone.Model.extend({
-		defaults: {}
+		defaults: {
+			title:'title',
+			header:'header',
+			subHeader:'subHeader'
+		}
 	});
 
 	return Model;
